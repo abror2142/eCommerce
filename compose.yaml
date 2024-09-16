@@ -1,0 +1,43 @@
+services:
+  db:
+    image: postgres:16.4-bookworm
+    container_name: db
+    restart: always
+    ports:
+      - '5435:5432'
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - PGUSER=${DB_USER}
+    volumes:
+      - data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready"]
+      interval: 1m30s
+      retries: 5
+      timeout: 30s
+  
+  backend: 
+    build: ./backend
+    container_name: web-backend
+    restart: always
+    ports:
+      - '8000:8000'
+    env_file:
+      - .env
+    depends_on:
+      db:
+        condition: service_healthy
+
+  frontend:
+    build: ./frontend
+    container_name: web-frontend
+    restart: always
+    ports:
+      - '8080:80'
+    depends_on:
+      - backend
+
+volumes:
+  data:
