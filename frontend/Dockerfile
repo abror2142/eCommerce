@@ -17,6 +17,6 @@ RUN npm run build
 FROM nginx:1.27.1-bookworm
 
 COPY --from=build /home/app/frontend/dist /usr/share/nginx/html
-# COPY ./default.conf /etc/nginx/conf.d
+# COPY ./default.conf /etc/nginx/conf.d  # will be used when additional settings available 
 
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
