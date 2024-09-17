@@ -8,7 +8,7 @@ User = get_user_model()
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=100)
+    category_name = models.CharField(max_length=100)
     parent = models.ForeignKey('self', null=True, blank=True, on_delete=models.SET_NULL)
 
     def __str__(self):
@@ -25,7 +25,7 @@ class Vendor(models.Model):
 
 
 class Product(models.Model):
-    name = models.CharField(max_length=150)
+    product_name = models.CharField(max_length=150)
     short_description = models.CharField(max_length=255)
     full_description = models.TextField(null=True, blank=True)
     price = models.DecimalField(max_digits=20, decimal_places=2)

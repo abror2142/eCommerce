@@ -36,15 +36,24 @@ class UserInfo(models.Model):
         ("M", "Male"),
         ("F", "Female")
     ]
+
     first_name = models.CharField(max_length=150, null=True, blank=True)
     middle_name = models.CharField(max_length=150, null=True, blank=True)
     last_name = models.CharField(max_length=150, null=True, blank=True)
     date_of_birth = models.DateField(null=True, blank=True)
     gender = models.CharField(max_length=2, null=True, blank=True, choices=GENDER_CHOICES)
     phone = models.CharField(max_length=15, null=True, blank=True)
-    image = models.ImageField(upload_to="user/", null=True, blank=True)
     address = models.ForeignKey(Address, null=True, on_delete=models.SET_NULL)
     user = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
 
     def __str__(self):
         return f"{self.user} {self.first_name} {self.last_name}"
+
+
+class UserImage(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to="users")
+    uploaded_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"{self.user}"
