@@ -7,15 +7,15 @@ import Header from "../containers/Header";
 function Layout(){
     return (
         <div className="site-wrapper">
-            <header>
+            <header className="header">
                 <Header />
             </header>
 
-            <main>
+            <main className="main">
                 <Outlet />
             </main>
             
-            <footer>
+            <footer className="footer">
                 <Footer />
             </footer>
         </div>

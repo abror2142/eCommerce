@@ -1,7 +1,10 @@
+import NavBar from "../components/NavBar";
+
+
 function Header() {
     return (
         <>
-            <p>This is header for now!</p>
+            <NavBar />
         </>
     )
 }
