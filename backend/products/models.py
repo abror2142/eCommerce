@@ -41,3 +41,12 @@ class ProductCategory(models.Model):
 
     def __str__(self):
         return f"{self.category}: {self.product}"
+
+
+class ProductImage(models.Model):
+    image = models.ImageField(upload_to="product")
+    product = models.ForeignKey(Product, null=True, on_delete=models.SET_NULL)
+    uploaded_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.product
