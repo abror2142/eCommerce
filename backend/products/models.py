@@ -12,7 +12,7 @@ class Category(models.Model):
     parent = models.ForeignKey('self', null=True, blank=True, on_delete=models.SET_NULL)
 
     def __str__(self):
-        return self.name
+        return self.category_name
 
 
 class Vendor(models.Model):
@@ -32,7 +32,7 @@ class Product(models.Model):
     vendor = models.ForeignKey(Vendor, null=True, on_delete=models.SET_NULL)
 
     def __str__(self):
-        return self.name
+        return self.product_name
 
 
 class ProductCategory(models.Model):
