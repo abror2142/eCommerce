@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { NavLink } from "react-router-dom"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,7 +7,12 @@ import { faMagnifyingGlass, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 function NavBar(){
     const [search, setSearch] = useState('')
+    const searchRef = useRef()
 
+    async function handleSubmit() {
+        console.log(search)
+    }
+  
     return (
         <nav className="nav-bar">
             <div className="nav-left">
@@ -17,27 +22,39 @@ function NavBar(){
             <div className="nav-center">
                 <div className="search-box">
                     <div className="search-icon-box">
-                        <FontAwesomeIcon icon={faMagnifyingGlass} className="search-icon" />
-                    </div>
-
-  
+                        <FontAwesomeIcon 
+                            icon={faMagnifyingGlass} 
+                            className="search-icon" 
+                            onClick={handleSubmit}
+                        />
+                    </div>  
                         <input 
                             id="search-input"
                             className="search-input"
                             type="text"
-                            onClick={(e) => setSearch(e.target.value)}
+                            onChange={(e) => setSearch(e.target.value)}
+                            value={search}
+                            ref={searchRef}
                         />
-   
-                    {(search.length > 0) && <div className="xmark-icon-box">
-                        <FontAwesomeIcon icon={faXmark} className="xmark-icon" />
-                    </div>}
+                    <div className="xmark-icon-box">
+                        {(search.length > 0) && 
+                            <FontAwesomeIcon 
+                                icon={faXmark} 
+                                className="xmark-icon"
+                                onClick={() => {
+                                    searchRef.current.focus()
+                                    setSearch('')
+                                }} 
+                            />
+                        }   
+                    </div>
                 </div>
             </div>
 
             <div className="nav-right">
-                <div>
-                    <NavLink to="#">Register</NavLink>
-                    <NavLink to="#">Login</NavLink>
+                <div className="nav-account">
+                    <NavLink className="register" to="#">Register</NavLink>
+                    <NavLink className="login" to="#">Login</NavLink>
                 </div>
             </div>
         </nav>
