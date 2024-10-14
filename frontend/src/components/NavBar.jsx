@@ -2,7 +2,7 @@ import { useState, useRef } from "react";
 import { NavLink } from "react-router-dom"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass, faXmark, faCartShopping, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faMagnifyingGlass, faXmark, faCartShopping, faUser, faChartGantt } from "@fortawesome/free-solid-svg-icons";
 import uzbekistan from "../assets/uzb.png";
 import britain from "../assets/britain.png";
 import russia from "../assets/russian.png";
@@ -42,17 +42,25 @@ function NavBar(){
             <nav className="nav-bar">
 
                 <div className="nav-left">
-                    <ul className="brand-name">
-                        <li>e</li>
-                        <li className="sp">C</li>
-                        <li>o</li>
-                        <li>m</li>
-                        <li>m</li>
-                        <li>e</li>
-                        <li>r</li>
-                        <li>c</li>
-                        <li>e</li>
-                    </ul>
+                    <div>
+                        <ul className="brand-name">
+                            <li>e</li>
+                            <li className="sp">C</li>
+                            <li>o</li>
+                            <li>m</li>
+                            <li>m</li>
+                            <li>e</li>
+                            <li>r</li>
+                            <li>c</li>
+                            <li>e</li>
+                        </ul>
+                    </div>
+                    <div className="nav-track">
+                        <NavLink className="track-order-link" to="#">
+                            <p>Track</p>
+                            <h4>Your Orders</h4>
+                        </NavLink>
+                    </div>
                 </div>
 
                 <div className="nav-center">
@@ -88,8 +96,7 @@ function NavBar(){
                 </div>
 
                 <div className="nav-right">
-                    <div 
-                        className="lang-box"
+                    <div className="lang-box"
                         onBlur={() => setShowLangOptions(false)}
                         tabIndex={0}
                         onMouseLeave={() => setShowLangOptions(false)}
@@ -125,24 +132,22 @@ function NavBar(){
                         }
                     </div>
 
+                    
+
                     <div className="nav-account">
-                        
                         <NavLink className="register" to="#">
-                            <FontAwesomeIcon 
-                                icon={faUser} 
-                                className="user-icon"
-                            />
-                            Account
+                            <p>Sign into</p>
+                            <h4>Account</h4>
                         </NavLink>
                     </div>
 
                     <div className="nav-cart-box">
-                        <div>
+                       
                             <FontAwesomeIcon 
                                 icon={faCartShopping}
                                 className="cart-icon"
                             />
-                        </div>
+                      
                         <p>(1)</p>
                     </div>
 
