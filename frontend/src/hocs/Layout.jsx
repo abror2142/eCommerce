@@ -9,8 +9,9 @@ function Layout(){
         <div className="site-wrapper">
             <header className="header">
                 <Header />
+                <hr />
             </header>
-
+            
             <main className="main">
                 <Outlet />
             </main>
