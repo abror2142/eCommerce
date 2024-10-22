@@ -1,12 +1,12 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faUser, faBox, faHeart, faCartShopping, faCar, faBars } from "@fortawesome/free-solid-svg-icons"
+import { faUser, faBox, faHeart, faCartShopping, faHome, faBars } from "@fortawesome/free-solid-svg-icons"
 function NavMobileBottom() {
     return (
         <div className="nav-mobile-bottom" id="site">
             <div>
                 <FontAwesomeIcon 
                     className="nav-mobile-icon"
-                    icon={faBars} 
+                    icon={faBox} 
                 />
             </div>
             <div>
@@ -18,13 +18,7 @@ function NavMobileBottom() {
             <div>
                 <FontAwesomeIcon 
                     className="nav-mobile-icon"
-                    icon={faCartShopping} 
-                />
-            </div>
-            <div>
-                <FontAwesomeIcon 
-                    className="nav-mobile-icon"
-                    icon={faBox} 
+                    icon={faHome} 
                 />
             </div>
             <div>
@@ -33,6 +27,14 @@ function NavMobileBottom() {
                     icon={faHeart} 
                 />
             </div>
+
+            <div>
+                <FontAwesomeIcon 
+                    className="nav-mobile-icon"
+                    icon={faCartShopping} 
+                />
+            </div>
+            
         </div>
     )
 }

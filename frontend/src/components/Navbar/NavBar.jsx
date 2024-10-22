@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-import TopBar from "./TopBar";
-import MainBar from "./MainBar";
-import BottomBar from "./BottomBar";
-import NavMobile from "./NavMobile";
-import NavMobileBottom from "./NavMobileBottom";
+import TopBar from "./Desktop/TopBar";
+import MainBar from "./Desktop/MainBar";
+import BottomBar from "./Desktop/BottomBar";
+import NavMobile from "./Mobile/NavMobile";
+import NavMobileBottom from "./Mobile/NavMobileBottom";
 
 function NavBar(){
 

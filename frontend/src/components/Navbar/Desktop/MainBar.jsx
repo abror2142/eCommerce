@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import fonusLogo from "../assets/fonus-logo.png"
+import fonusLogo from "../../../assets/fonus-logo.png"
 import { faSearch, faUser, faBox, faHeart, faCartShopping, faList } from "@fortawesome/free-solid-svg-icons"
+
 function MainBar(){
     return (
         <div className="navbar-main">

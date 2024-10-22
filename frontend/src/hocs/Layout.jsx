@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 
 import Footer from "../containers/Footer";
 import Header from "../containers/Header";
-import NavMobileBottom from "../components/NavMobileBottom";
+import NavMobileBottom from "../components/Navbar/Mobile/NavMobileBottom";
 
 
 function Layout(){
