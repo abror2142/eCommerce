@@ -17,7 +17,6 @@ function NavBar(){
             </div>
             <div className="nav-mobile">
                 <NavMobile />
-                <NavMobileBottom />
             </div>
         </nav>
     )

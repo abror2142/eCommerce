@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 
 import Footer from "../containers/Footer";
 import Header from "../containers/Header";
+import NavMobileBottom from "../components/NavMobileBottom";
 
 
 function Layout(){
@@ -18,6 +19,7 @@ function Layout(){
             
             <footer className="footer">
                 <Footer />
+                <NavMobileBottom className="nav-mobile"/>
             </footer>
         </div>
     )

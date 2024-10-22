@@ -23,6 +23,7 @@
   display: none;
 }
 
+
 .navbar {
   display: flex;
   flex-direction: column;
@@ -106,7 +107,7 @@
   align-items: center;
 }
 
-.search-icon {
+.search-icon {  
   font-size: 1.3rem;
 }
 
@@ -169,7 +170,18 @@
   
 }
 
+.dim {
+  box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.3);
+}
+
+.main {
+  height: 100%;
+}
+
 @media only screen and (max-width: 768px) {
+  .site-wrapper {
+    padding-bottom: 60px;
+  }
   .nav-desktop {
     display: none;
   }
@@ -184,6 +196,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
   }
 
   .nav-mobile-logo {
@@ -206,5 +219,17 @@
     width: 100%;
     background-color: white;
   }
+
+  .categories-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 80%;
+    background-color: blue;
+    height: 100%;
+  } 
 
 }
