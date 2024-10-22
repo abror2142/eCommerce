@@ -1,3 +1,4 @@
+import Card from "../components/Card/Card";
 import NavBar from "../components/Navbar/NavBar";
 import "cities";
 
@@ -15,6 +16,7 @@ function Header() {
     return (
         <> 
             <NavBar />
+            <Card />
         </>
     )
 }

@@ -4,6 +4,10 @@
   padding: 0;
 }
 
+img {
+  width: 100%;
+}
+
 .site-wrapper {
   height: 100vh;
   width: 90%;
@@ -178,6 +182,95 @@
 }
 .color-red {
   color: red;
+}
+
+
+/* ========== */
+/* >  Card  < */
+/* ========== */
+
+.card {
+  max-width: 240px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.card-header {
+  position: relative;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  padding: 0.5em;
+}
+
+.product-name {
+  font-size: 1.2rem;
+  font-weight: 550;
+}
+
+.product-brand {
+  font-weight: bolder;
+}
+
+.product-description {
+  font-size: 0.9rem;
+}
+
+.product-statistics {
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-rating,
+.product-comment {
+  display: flex;
+  gap: 0.5em;
+}
+
+.brand-price {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-button {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-grow: 1;
+  height: 30px;
+}
+
+.card-button-box {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5em;
+}
+
+.buy-button {
+  background-color: #07F369;
+}
+
+.cart-button {
+  background-color: #12143D;
+  color: white;
+}
+
+.card-heart-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0.5em;
+  padding: 0.5em;
+  background-color: rgb(200, 200, 200);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 
