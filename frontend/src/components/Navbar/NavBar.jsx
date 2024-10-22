@@ -7,7 +7,6 @@ import NavMobile from "./Mobile/NavMobile";
 import NavMobileBottom from "./Mobile/NavMobileBottom";
 
 function NavBar(){
-
     return (
         <nav className="navbar">
             <div className="nav-desktop">

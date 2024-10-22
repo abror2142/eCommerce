@@ -2,29 +2,38 @@ import { useState } from "react";
 
 import DropdownButton from "./DropdownButton";
 import DropdownItem from "./DropdownItem";
+import getUuid from "../../utils/uuid";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
-function Dropdown({icon, text, items}){
+function Dropdown({text, items}){
 
     const [open, setOpen] = useState(false)
     
     return (
-        <div className="dropdown-content">
+        <div 
+            className="dropdown-content"
+        >
             <div 
-                className=""
+                className="dropdown-content-main"
                 onClick={() => setOpen((prev) => !prev)}
             >
                 <DropdownButton 
-                    icon={icon} 
                     text={text}
-                
-                />  
+                />
+                <FontAwesomeIcon icon={faChevronDown} />  
             </div>
 
             {/* Dropdown items */}
             {open && 
                 <div>
-                    {items && items.map((item) => {
-                        return (<DropdownItem item={item} />)
+                    {items && items.map((item, index) => {
+                        return (
+                            <DropdownItem 
+                                text={item}
+                                key={getUuid()}
+                            />
+                        )
                     })}
                 </div>
             }

@@ -19,7 +19,6 @@ function Layout(){
             
             <footer className="footer">
                 <Footer />
-                <NavMobileBottom className="nav-mobile"/>
             </footer>
         </div>
     )

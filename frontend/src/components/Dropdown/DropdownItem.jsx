@@ -1,10 +1,9 @@
 import FontAwesomeIcons from "../../utils/FontAwesomeIcons"
 
-function DropdownItem({item}) {
-    const {icon, text} = item
+function DropdownItem({text}) {
+    
     return (
         <div className="dropdown-item">
-            <FontAwesomeIcons icon={icon} />
             <p>{text}</p>
         </div>
     )

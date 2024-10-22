@@ -23,7 +23,6 @@
   display: none;
 }
 
-
 .navbar {
   display: flex;
   flex-direction: column;
@@ -181,22 +180,6 @@
   color: red;
 }
 
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3em;
-  padding: 0.5em 2em;
-  z-index: 1;
-}
-
-.hide {
-  display: none;
-}
 
 @media only screen and (max-width: 768px) {
   .site-wrapper {
@@ -269,12 +252,25 @@
     font-size: 1.2em;
   }
 
-  .nav-mobile-category {
+  .nav-mobile-dropdown {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 0.5em 1em;
+
+  }
+
+  .nav-mobile-dropdown .dropdown-content-main {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
     border-bottom: 1px solid black;
+    padding: 0.7em 1em;
+  }
+
+  .nav-mobile-dropdown .dropdown-button {
+    width: 100%;
+    display: flex;
+    gap: 0.5em;
   }
 
   .nav-mobile-category .title {

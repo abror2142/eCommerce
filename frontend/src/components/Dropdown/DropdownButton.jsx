@@ -1,14 +1,16 @@
 import FontAwesomeIcons from "../../utils/FontAwesomeIcons";
 
-function DropdownButton({icon, text}){
+function DropdownButton({text}){
     return (
-        <button className="dropdown-button">
+        <div className="dropdown-button">
             <FontAwesomeIcons 
-                icon={icon}
+                text={text}
                 className="dropdown-button-icon"
             />
-            {text}
-        </button>
+            <p>
+                {text}
+            </p>
+        </div>
     )
 }
 
