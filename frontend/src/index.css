@@ -274,6 +274,121 @@ img {
 }
 
 
+/* ========== */
+/* >  Card  < */
+/* ========== */
+
+.detail {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-header {
+  display: flex;
+}
+
+.detail-image-box {
+  display: flex;
+  gap: 1em;
+}
+
+.detail-image-option-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  width: 65px;
+}
+
+.detail-image-option {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.2em;
+  border: 1px solid black;
+}
+
+.detail-main-image {
+  width: 400px;
+}
+
+.detail-info-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.detail-product-rating-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-product-rating-info {
+  display: flex;
+  gap: 1em;
+}
+
+.detail-product-price-box {
+  display: flex;
+  gap: 1.5em;
+}
+
+.detail-product-price-info {
+  display: flex;
+  gap: 0.5em;
+}
+
+.detail-product-status {
+  display: flex;
+  gap: 0.5em;
+}
+
+.detail-product-option-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.detail-product-options {
+  display: flex;
+  gap: 0.5em;
+}
+.detail-product-current-option {
+  display: flex;
+}
+.detail-product-option{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2em;
+  border: 1px solid;
+}
+
+.detail-product-option-image {
+  width: 60px;
+}
+
+.detail-product-info-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-product-info-item {
+  display: flex;
+  gap: 1em;
+}
+
+.detail-product-promotion-image {
+  width: 230px;
+}
+
+.detail-header-left {
+  display: flex;
+  gap: 1em;
+}
+
+
+
+
 @media only screen and (max-width: 768px) {
   .site-wrapper {
     padding-bottom: 60px;
