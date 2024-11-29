@@ -1,21 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-const categories = [
-  { id: 1, name: "Electronics", parent: null },
-  { id: 2, name: "Phones & Smart Watches", parent: 1 },
-  { id: 3, name: "Smartphones & Tablets", parent: 2 },
-  { id: 4, name: "Smartphones", parent: 3 },
-  { id: 5, name: "Tablets", parent: 3 },
-  { id: 6, name: "Accessories for Smartphones and Phones", parent: 2 },
-  { id: 7, name: "Cases", parent: 6 },
-  { id: 8, name: "Protective Glasses", parent: 6 },
-  { id: 9, name: "Toys", parent: null },
-  { id: 10, name: "Action Figures", parent: 9 },
-  { id: 11, name: "Superheroes", parent: 10 }
-];
 
 const CategorySelector = () => {
   const [selectedCategories, setSelectedCategories] = useState([]);
+  
+  const [categories, setCategories] = useState([])
+
+  async function fetchCategories(){
+    console.log('Response')
+    const url = "http://localhost:8000/products/category/"
+    const resp = await fetch(url)
+    const json = await resp.json()
+    setCategories(json)
+  }
+
+  useEffect(() => {
+    fetchCategories();
+  }, [])
+
+  console.log(categories)
 
   const getSubcategories = (parentId) => {
     return categories.filter((category) => category.parent === parentId);
