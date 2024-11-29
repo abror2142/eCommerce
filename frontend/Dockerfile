@@ -1,4 +1,4 @@
-# Stage 1 of 2: Building react app.
+	# Stage 1 of 2: Building react app.
 
 FROM node:22-alpine3.19 as build
 

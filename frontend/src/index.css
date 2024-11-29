@@ -19,6 +19,10 @@ img {
 
 }
 
+.no-wrap {
+  text-wrap: nowrap;
+}
+
 /* ==================
    >  NavBar Style  <
    ================== */
@@ -451,6 +455,61 @@ img {
 .detail-promotion {
   display: flex;
   gap: 0.5em;
+}
+
+.product-create-page {
+  margin: 2em auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  border: 1px solid black;
+  border-radius: 25px;
+  padding: 1em 2em;
+  max-width: 800px;
+}
+
+.product-create-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.product-create-field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .7em;
+}
+
+.category-selector-box {
+
+}
+
+.category-select-wrapper {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  font-size: 1.1rem;
+}
+
+.category-select {
+  display: block;
+  height: 30px;
+  flex-grow: 1;
+  font-size: 0.9rem;
+}
+
+.category-select-title {
+  width: 150px;
+  text-align: center;
+}
+
+.category-select-box {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  gap: .5em;
 }
 
 
