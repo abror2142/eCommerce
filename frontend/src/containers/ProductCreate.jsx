@@ -1,22 +1,10 @@
 import { useState } from "react";
 
 import CategorySelector from "./CategorySelector";
+import CompanyBrandSelector from "./BrandSelector";
 
 
 function ProductCreate(){
-    const [category, setCategory] = useState([]); 
-
-    function make_option(list){
-        options = []
-        list.forEach(element => {
-            if(typeof(element) == "object"){
-                options.push(make_option(element))
-            }else {
-                options.push(<option>{element}</option>)
-            }
-        });
-    }
-
     return (
         <div className="product-create-page">
             <div className="header">
@@ -32,6 +20,14 @@ function ProductCreate(){
                         </div>
                         <CategorySelector />
                     </div>
+
+                    <div className="category-selector-box product-create-field">
+                        <div>
+                            <h3>Please choose a valid Category</h3>
+                        </div>
+                        <CompanyBrandSelector />
+                    </div>
+
                 </div>
             </div>
         </div>

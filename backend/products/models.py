@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Company(models.Model):
     name = models.CharField(max_length=150)
     short_description = models.CharField(max_length=255)
@@ -18,17 +19,6 @@ class Brand(models.Model):
 
     def __str__(self):
         return self.name
-    
-
-class CompanyBrand(models.Model):
-    company = models.ForeignKey(Company, on_delete=models.CASCADE, null=True, blank=True)
-    brand = models.ForeignKey(Brand, on_delete=models.CASCADE, null=True, blank=True)
-
-    class Meta:
-        verbose_name_plural = 'BrandCompany'
-
-    def __str__(self):
-        return f"{self.brand} {self.company}"
 
 
 class Category(models.Model):
@@ -47,7 +37,8 @@ class Category(models.Model):
 
 class Product(models.Model):
     name = models.CharField(max_length=150)
-    brand_company = models.ForeignKey(CompanyBrand, on_delete=models.SET_NULL, null=True, blank=True)
+    company = models.ForeignKey(Company, null=True, blank=True, on_delete=models.SET_NULL)
+    brand = models.ForeignKey(Brand, null=True, blank=True, on_delete=models.SET_NULL)
     short_description = models.CharField(max_length=255)
     full_description = models.TextField(null=True, blank=True)
     added_at = models.DateTimeField(auto_now=True)

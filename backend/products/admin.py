@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import (Category, Product, ProductCategory, ProductVariant, 
                      Brand, Company, ProductColor, ProductImage, ProductImageSet, 
                      ProductMemory, ProductSize, ProductVariantCustomCharacter, 
-                     CompanyBrand, CustomCharacter, CustomCharacterOption)
+                    CustomCharacter, CustomCharacterOption)
 
 
 @admin.register(Category)
@@ -35,10 +35,10 @@ class BrandAdmin(admin.ModelAdmin):
     list_display_links = ['name']
 
 
-@admin.register(CompanyBrand)
-class CompanyBrandAdmin(admin.ModelAdmin):
-    list_display = ['id', 'company', 'brand']
-    list_display_links = ['company', 'brand']
+@admin.register(Company)
+class CompanyAdmin(admin.ModelAdmin):
+    list_display = ['id', 'name']
+    list_display_links = ['name']
 
 
 @admin.register(ProductColor)
